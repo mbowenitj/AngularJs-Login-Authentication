@@ -6,7 +6,7 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController($scope, $firebaseArray) {
+  function MainController($scope, $firebaseArray, $state) {
 
     $scope.submit = function() {
       console.log('submitted form');
@@ -18,6 +18,7 @@
         phone: $scope.phone
       }).then(function(ref) {
         console.log('added record:', ref);
+        $state.go('submitted');
       });
 
     }
