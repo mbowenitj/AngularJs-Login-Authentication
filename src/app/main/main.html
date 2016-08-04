@@ -8,8 +8,9 @@
    <p>But, first, we need a few details<br> from you…</p>
 </div>
 <!-- <div class="userForm"> -->
-<form name="userForm" ng-submit="submit()" id="userForm">
+<form role="form" name="userForm" ng-submit="submit()" id="userForm">
    <fieldset>
+     <div class="container">
       <label for="name">Name:</label>
       <input id="name" name="name" class="form-control" placeholder="Enter name" value="" required aria-required="true" aria-describedby="name-format" ng-model="name">
       <br>
@@ -23,8 +24,9 @@
       <input type="email" id="email" name="email" class="form-control" placeholder="Enter email" value="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required ng-model="email">
       <br>
       <div class="submit">
-         <input type="submit" class="btn btn-danger btn-block" value="Submit Form">
+         <input type="submit" style="background-color:#DC3962" class="btn btn-block" value="Submit Form">
       </div>
+    </div>
       <!-- </div> -->
    </fieldset>
 </form>
