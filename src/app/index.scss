@@ -36,13 +36,14 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
 //   }
 // }
 
-div.image {
+ .image {
+   background-size: 100%;
    width: 100%;
    height:auto; /*height of your image*/
-   background-color: #ab7c30;
+   background: url(../assets/images/gradient.png) repeat-x;
    text-align: center;
-   padding-top: 30px;
-   padding-bottom: 30px;
+   padding-top: 7px;
+   padding-bottom: 8px;
 }
 
 p {
@@ -50,9 +51,23 @@ p {
   text-align: center;
   font-weight: bold;
   font-family: "Helvetica Neue";
-  font-size: 11px;
-  
+  font-size: 16px;
 }
+
+#userForm {
+  padding: 12px;
+}
+
+body {
+    //background: url(../assets/images/gradient.png);
+    background-color:#ab7c30;
+
+
+}
+
+
+//
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically

@@ -1,43 +1,30 @@
-<div class="container">
-  <br>
 <!-- <h1 align="center">Captive Portal</h1> -->
-
-
 <div class="image">
-  <img src="assets/logo-mobile.png" alt="">
-  <br><br>
-  <p>Our Wifi Portal gives you free access to our Facebook Page!</p>
-  <p>But, first, we need a few details from you…</p>
-
+   <img src="assets/logo-mobile.png" alt="">
+   <br>
+   <br>
+   <p>Our Wifi Portal gives you free<br>
+      access to our Facebook Page!
+   <p>But, first, we need a few details<br> from you…</p>
 </div>
-<br>
-<form name="userForm" ng-submit="submit()">
+<!-- <div class="userForm"> -->
+<form name="userForm" ng-submit="submit()" id="userForm">
    <fieldset>
-      <div class="form-group">
-         <label for="name">Name:</label>
-         <input id="name" name="name" class="form-control" placeholder="Enter name" value="" required aria-required="true" aria-describedby="name-format" ng-model="name">
-      </div>
-
-      <div class="form-group">
-         <label for="name">Surname:</label>
-         <input id="surname" name="surname" class="form-control" placeholder="Enter surname" value="" required aria-required="true" aria-describedby="name-format" ng-model="surname">
-      </div>
-
-      <div class="form-group">
-         <label for="name">Phone Number:</label>
-         <input type="text" id="phone" name="phone" class="form-control" placeholder="Enter phone number" value="" maxlength="10" pattern="[0-9]{10}" required ng-model="phone">
-      </div>
-
-      <div class="form-group">
-         <label for="email">Email:</label>
-         <input type="email" id="email" name="email" class="form-control" placeholder="Enter email" value="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-            required ng-model="email">
-      </div>
- <br>
-      <div class="submit">
-         <input type="submit" class="btn btn-primary btn-block" value="Submit Form">
-      </div>
-    </div>
+      <label for="name">Name:</label>
+      <input id="name" name="name" class="form-control" placeholder="Enter name" value="" required aria-required="true" aria-describedby="name-format" ng-model="name">
       <br>
+      <label for="name">Surname:</label>
+      <input id="surname" name="surname" class="form-control" placeholder="Enter surname" value="" required aria-required="true" aria-describedby="name-format" ng-model="surname">
+      <br>
+      <label for="name">Phone Number:</label>
+      <input type="text" id="phone" name="phone" class="form-control" placeholder="Enter phone number" value="" maxlength="10" pattern="[0-9]{10}" required ng-model="phone">
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" class="form-control" placeholder="Enter email" value="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required ng-model="email">
+      <br>
+      <div class="submit">
+         <input type="submit" class="btn btn-danger btn-block" value="Submit Form">
+      </div>
+      <!-- </div> -->
    </fieldset>
 </form>
