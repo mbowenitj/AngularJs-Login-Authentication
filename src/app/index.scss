@@ -78,25 +78,26 @@ body {
   color: white;
 }
 
-.absolute {
-    position: absolute;
-    top: 280px;
-    left:100px;
-    width: 200px;
-    height: auto;
-    color: white;
-
+.thank {
+     position: absolute;
+     text-align: center;
+     top: 280px;
+     //height: auto;
+     color: white;
+     width: 100% ;
+     height: auto;
 }
 
-#back-img{
-  position: absolute;
-    //  left: 20px;
-    width: 100px;
-    left: 100px;
-    top: 324px;
-    height: auto;
 
-}
+// #back-img{
+//   position: absolute;
+//     //  left: 20px;
+//   width: 100px;
+//   left: 100px;
+//   top: 324px;
+//   height: auto;
+//
+// }
 
 // .pcolors{
 //   position: absolute;
