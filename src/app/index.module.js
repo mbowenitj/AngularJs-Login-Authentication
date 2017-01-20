@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('comfortCaptivePortal', [
+    .module('tangentLoginProject', [
       'ngAnimate',
       'ngCookies',
       'ngTouch',
@@ -11,8 +11,8 @@
       'ngAria',
       'ui.router',
       'ui.bootstrap',
-      'toastr',
-      'firebase'
+      'toastr'
+
     ]);
 
 })();

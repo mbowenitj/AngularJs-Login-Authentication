@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('comfortCaptivePortal')
+    .module('tangentLoginProject')
     .config(config);
 
   /** @ngInject */

@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('comfortCaptivePortal')
+    .module('tangentLoginProject')
     .constant('malarkey', malarkey)
     .constant('moment', moment);
 
