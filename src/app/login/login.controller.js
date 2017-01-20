@@ -5,36 +5,32 @@
     .module('tangentLoginProject')
     .controller('LoginController', MainController);
 
-  /** @ngInject */
+    LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService'];
+      function LoginController($location, AuthenticationService, FlashService) {
+          var usr = this;
+
+          usr.login = login;
+
+          (function initController() {
+              // reset login status
+              AuthenticationService.ClearCredentials();
+          })();
+
+          function login() {
+              usr.dataLoading = true;
+              AuthenticationService.Login(usr.username, usr.password, function (response) {
+                  if (response.success) {
+                      AuthenticationService.SetCredentials(usr.username, usr.password);
+                      $location.path('/');
+                  } else {
+                      FlashService.Error(response.message);
+                      usr.dataLoading = false;
+                  }
+              });
+          };
+      }
 
 
-    // $scope.submit = function() {
-    //   console.log('submitted form');
-    //
-    //   $scope.users.$add({
-    //     name: $scope.name,
-    //     surname: $scope.surname,
-    //     email: $scope.email,
-    //     phone: $scope.phone
-    //   }).then(function(ref) {
-    //     console.log('added record:', ref);
-    //     $state.go('submitted');
-    //   });
-    //
-    // }
-
-    // var config = {
-    //   apiKey: "AIzaSyDz23vm3iu511XbIfld6H7B8qa3-UJJiYw",
-    //   authDomain: "comfort-wifi-82123.firebaseapp.com",
-    //   databaseURL: "https://comfort-wifi-82123.firebaseio.com",
-    //   storageBucket: "comfort-wifi-82123.appspot.com",
-    // };
-    // firebase.initializeApp(config);
-    //
-    // var fb = firebase.database().ref();
-    //
-    // $scope.users = $firebaseArray(fb);
 
 
-  
-})();
+});
