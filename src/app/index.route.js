@@ -12,7 +12,13 @@
         url: '/',
         templateUrl: 'app/login/login.html',
         controller: 'LoginController'
-      });
+      })
+
+      .state('projects', {
+        url: '/projects',
+        templateUrl: 'app/projects/projects.html',
+        controller: 'ProjectsController'
+      });;
 
     $urlRouterProvider.otherwise('/');
   }
@@ -31,7 +37,7 @@
             var restrictedPage = $.inArray($location.path(), ['/login']) === -1;
             var loggedIn = $rootScope.globals.currentUser;
             if (restrictedPage && !loggedIn) {
-                $location.path('/login');
+                $location.path('/');
             }
         });
     }
