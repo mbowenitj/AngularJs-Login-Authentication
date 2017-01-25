@@ -2,7 +2,7 @@
 
 <!-- <div ng-controller="ProjectsController"> -->
 <!-- <h3>Select a project to change</h3> -->
-{{projects}}
+<!-- {{projects}} -->
 {{project.title}}
       <div ng-name="projects">
         <div class="data"><br>
@@ -16,32 +16,31 @@
 
         </div>
 
-        <div class="row" ng-repeat"project in projects">
+        <div class="row" ng-repeat="project in projects">
          <div class="col-md-12 col-xs-12">
             <div class="table-container">
-            <table class="table table-striped">
-              <tr><br>
+            <table class="table">
+              <tr class="success"><br>
                 <td>Title</td> <td>Description</td> <td>Start-Date</td>
                 <td>End Date</td><td>Is Billable</td><td>Is Active</td>
-                <td>Created</td>
+                <!-- <td>Created</td> -->
               </tr>
-              <tr>
+              <tr class="info">
                 <td>{{project.title}}</td> <td>{{project.description}}</td> <td>{{project.start_date}}</td>
-                <td>{{project.end_date}}</td> <td>{{project.billable}}</td> <td>{{project.active}}</td>
-                <td>{{project.created}}</td>
+                <td>{{project.end_date}}</td> <td>{{project.is_billable}}</td> <td>{{project.is_active}}</td>
+                <!-- <td>{{project.created}}</td> -->
               </tr>
             </table>
           </div>
           <div class="row">
             <div class="col-md-4 col-xs-12">
               <div class="table-responsive">
-                <table class="table table-striped">
-                  <tr><br>
+                <table class="table align="center"">
+                  <tr class="info">
                     <td>Task Name</td> <td>Due Date</td> <td>Est Hours</td>
                   </tr>
                   <tr>
-                      <td>{{task.name}}</td> <td>{{task.duedate}}</td> <td>{{task.hours}}</td>
-
+                      <td>{{task.title}}</td> <td>{{task.dued_ate}}</td> <td>{{task.estimated_hours}}</td>
                   </tr>
                 </table>
               </div>
