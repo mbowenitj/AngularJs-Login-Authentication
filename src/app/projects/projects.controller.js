@@ -4,11 +4,12 @@
 angular.module('tangentLoginProject')
   .controller('ProjectsCtrl', ['$scope','$http', function($scope,$http) {
 
-    $scope.projects = [];
+  var vm = this;
+  vm.projects = [];
 
         $http({
           method: 'GET',
-            url: 'http://projectservice.staging.tangentmicroservices.com/api-explorer/#!/api/Project_0',
+            url: 'http://projectservice.staging.tangentmicroservices.com/api/v1/projects/',
             headers: {
                       'Authorization': 'Token b7ec34e136bb6d28a4421e422e852b99cc834d17'
                      }
@@ -17,7 +18,7 @@ angular.module('tangentLoginProject')
             // when the response is available
 
               console.log("success, ",response);
-              $scope.projects = response;
+              $scope.projects = response.project;
 
 
           }, function errorCallback(response) {

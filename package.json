@@ -1,7 +1,9 @@
 {
   "name": "tangentLoginProject",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "loopback-connector-rest": "^2.1.0"
+  },
   "scripts": {
     "test": "gulp test"
   },

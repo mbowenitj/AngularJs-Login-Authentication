@@ -2,7 +2,8 @@
 
 <!-- <div ng-controller="ProjectsController"> -->
 <!-- <h3>Select a project to change</h3> -->
-
+{{projects}}
+{{project.title}}
       <div ng-name="projects">
         <div class="data"><br>
           <select class="form-control" ng-model="selectedProjects" ng-options="project as project for project in projects" ng-change="updateProject()">
