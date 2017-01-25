@@ -1,4 +1,56 @@
+<script></script>
+
 <div ng-controller="ProjectsController">
-			<h2 ng-repeat="project in data">{{project.title}}</h2>
-      <p><a href="#/">Logout</a></a></p>
+<!-- <h3>Select a project to change</h3> -->
+
+      <div ng-name="projects">
+        <div class="data"><br>
+          <select class="form-control" ng-model="selectedProjects" ng-options="project as project for project in projects" ng-change="updateProject()">
+              <option value="">Select Projects</option>
+              <!-- <span ng-show="selectedProject">{{selectedProject}}</span>
+              <span ng-show="selectedOutlet">{{selectedOutlet.name}}</span> -->
+           </select>
+           <!-- <span ng-show="!selectedOutlet">Select Projects</span>
+           <span ng-show="selectedProject">{{project.title}}</span> -->
+
+        </div>
+
+        <div class="row" ng-repeat"project in projects">
+         <div class="col-md-12 col-xs-12">
+            <div class="table-container">
+            <table class="table table-striped">
+              <tr><br>
+                <td>Title</td> <td>Description</td> <td>Start-Date</td>
+                <td>End Date</td><td>Is Billable</td><td>Is Active</td>
+                <td>Created</td>
+              </tr>
+              <tr>
+                <td>{{project.title}}</td> <td>{{project.description}}</td> <td>{{project.start_date}}</td>
+                <td>{{project.end_date}}</td> <td>{{project.billable}}</td> <td>{{project.active}}</td>
+                <td>{{project.created}}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="row">
+            <div class="col-md-4 col-xs-12">
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <tr><br>
+                    <td>Task Name</td> <td>Due Date</td> <td>Est Hours</td>
+                  </tr>
+                  <tr>
+                      <td>{{task.name}}</td> <td>{{task.duedate}}</td> <td>{{task.hours}}</td>
+
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+          <div class="btn-logout">
+            <a class="btn btn-danger btn-block logout" href="#/">Logout</a>
+          </div>
+      </div>
 </div>

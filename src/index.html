@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
-    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
@@ -20,18 +20,27 @@
     <!-- css files will be automatically insert here -->
     <!-- endinject -->
     <!-- endbuild -->
+    <!--
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+    <script src="bower_components/angular/angular.js"></script>
+
+-->
+
+
   </head>
   <body>
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+    [endif]-->
 
     <div ui-view></div>
-    <!-- <script src="scripts/app.js"></script>
-       <script src="app/login/services.js"></script>
-       <script src="app/login/login.controllers.js"></script>
-       <script src="app/projects/projects.controllers.js"></script> -->
-     </body>
+
+  </body>
+  <script src="/app/index.route.js"></script>
+  <script src="/app/login/services.js"></script>
+  <script src="/app/login/login.controller.js"></script>
+  <script src="/app/projects/projects.controller.js"></script>
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
     <!-- run `gulp inject` to automatically populate bower script dependencies -->

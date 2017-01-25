@@ -16,6 +16,13 @@ $back-color:#D3D3D3;
 body{
   // background-color: $back-color;
 }
+table{
+  margin: 0 auto;
+  width:50%;
+  margin-top: 48px;
+  text-align: center;
+  font-weight: bold;
+}
 .container{
   width: 100%;
   padding-top: 35px;
@@ -38,6 +45,18 @@ body{
     }
   }
 }
+
+  .btn-logout{
+    padding-top: 30px;
+    width:84%;
+    margin: 0 auto;
+    .logout{
+      background-color: red;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
 
 @media screen and (min-width: 768px) {
   .container{
