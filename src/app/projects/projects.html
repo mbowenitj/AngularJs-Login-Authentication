@@ -32,7 +32,8 @@
                     <td>Task Name</td> <td>Due Date</td> <td>Estimated Hours</td>
                   </tr>
                   <tr ng-repeat="project in projects | filter: selectedProjects">
-                    <td>{{project.task_set[0].title}}</td> <td>{{project.task_set[0].due_date}}</td> <td>{{project.task_set[0].estimated_hours}}</td>
+                    <td>{{project.task_set[0].title}}</td> <td>{{project.task_set[0].due_date}}</td>
+                    <td>{{project.task_set[0].estimated_hours}}</td>
                   </tr>
                 </table>
               </div>

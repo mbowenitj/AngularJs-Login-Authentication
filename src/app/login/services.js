@@ -9,43 +9,23 @@ angular.module('tangentLoginProject')
 
         service.Login = function (username, password, callback) {
 
-
-
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
-            // $timeout(function(){
-            //     var response = { success: username === 'admin1' && password === 'admin1' };
-            //     if(!response.success) {
-            //         response.message = 'Username or password is incorrect';
-            //     }
-            //     callback(response);
-            // }, 1000);
+            $timeout(function(){
+                var response = { success: username === 'test' && password === 'test' };
+                if(!response.success) {
+                    response.message = 'Username or password is incorrect';
+                }
+                callback(response);
+            }, 1000);
 
 
-            /* Use this for real authentication
+            /* Used for real authentication
              ----------------------------------------------*/
-            $http.post('http://userservice.staging.tangentmicroservices.com/api-explorer/#!/api/User',
-            headers: {
-                     'Authorization': 'Token b7ec34e136bb6d28a4421e422e852b99cc834d17',
-                     'Content-type': 'application/json'
-                    }
-            {
-              username: username,
-              password: password
-            })
-              //  .success(function (response) {
-              //      callback(response);
-              //  });
-              .then(function successCallback(response) {
-                  // this callback will be called asynchronously when the response is available
-                    console.log("success, ",response);
-                    $scope.projects = response.data;
-
-                }, function errorCallback(response) {
-
-                  console.log("failure, ",response);
-                  // called asynchronously if an error occurs or server returns response with an error status.
-                });
+            //$http.post('http://projectservice.staging.tangentmicroservices.com/api/v1/projects/', { username: username, password: password })
+            //    .success(function (response) {
+            //        callback(response);
+            //    });
 
         };
 
@@ -157,20 +137,3 @@ angular.module('tangentLoginProject')
 
     /* jshint ignore:end */
 });
-// angular.module('tangentLoginProject')
-//   .factory('LoginService', function() {
-//     var admin = 'admin';
-//     var pass = 'pass';
-//     var isAuthenticated = false;
-//
-//     return {
-//       login : function(username, password) {
-//         isAuthenticated = username === admin && password === pass;
-//         return isAuthenticated;
-//       },
-//       isAuthenticated : function() {
-//         return isAuthenticated;
-//       }
-//     };
-//
-//   });

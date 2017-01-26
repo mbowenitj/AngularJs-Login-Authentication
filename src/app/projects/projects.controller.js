@@ -7,9 +7,6 @@ angular.module('tangentLoginProject')
   var vm = this;
   vm.projects = [];
 
-  var tsk = this;
-  tsk.tasks = [];
-
         $http({
           method: 'GET',
             url: 'http://projectservice.staging.tangentmicroservices.com/api/v1/projects/',
@@ -20,17 +17,14 @@ angular.module('tangentLoginProject')
         })
 
         .then(function successCallback(response) {
-            // this callback will be called asynchronously
-            // when the response is available
+            // this callback will be called asynchronously when the response is available
               console.log("success, ",response);
               $scope.projects = response.data;
-              // $scope.task = response.data;
 
           }, function errorCallback(response) {
 
             console.log("failure, ",response);
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
+            // called asynchronously if an error occurs or server returns response with an error status.
           });
 
           $scope.deleteProject = function() {

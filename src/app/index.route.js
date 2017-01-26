@@ -1,8 +1,10 @@
 (function() {
   'use strict';
 
-  angular.module('tangentLoginProject').config(routerConfig);
+  angular.module('tangentLoginProject')
+    .config(routerConfig);
 
+  /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('login', {
@@ -15,12 +17,10 @@
         url: '/projects',
         templateUrl: 'app/projects/projects.html',
         controller: 'ProjectsCtrl'
-      });
+      });;
 
     $urlRouterProvider.otherwise('/');
   }
-
-  /** @ngInject */
 
   run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
     function run($rootScope, $location, $cookies, $http) {
