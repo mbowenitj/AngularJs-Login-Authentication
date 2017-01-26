@@ -5,7 +5,7 @@ angular.module('tangentLoginProject')
     ['$scope', '$rootScope', '$location', 'AuthenticationService',
     function ($scope, $http,$rootScope, $location, AuthenticationService,$state,$localStorage) {
         // reset login status
-        // AuthenticationService.ClearCredentials();
+        AuthenticationService.ClearCredentials();
 
         $scope.login = function () {
             $scope.dataLoading = true;

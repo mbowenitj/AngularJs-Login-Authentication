@@ -1,31 +1,23 @@
-<script></script>
 
-<!-- <div ng-controller="ProjectsController"> -->
-<!-- <h3>Select a project to change</h3> -->
 <!-- {{projects}} -->
-{{project.title}}
+<!-- {{tasks}} -->
       <div ng-name="projects">
         <div class="data"><br>
-          <select class="form-control" ng-model="selectedProjects" ng-options="project as project for project in projects" ng-change="updateProject()">
-              <option value="">Select Projects</option>
-              <!-- <span ng-show="selectedProject">{{selectedProject}}</span>
-              <span ng-show="selectedOutlet">{{selectedOutlet.name}}</span> -->
-           </select>
-           <!-- <span ng-show="!selectedOutlet">Select Projects</span>
-           <span ng-show="selectedProject">{{project.title}}</span> -->
-
+          <h4>Select project to change</h4>
+          <select>
+              <option ng-repeat="project in projects">{{project.title}}</option>
+          </select>
         </div>
-
-        <div class="row" ng-repeat="project in projects">
+        <div class="row">
          <div class="col-md-12 col-xs-12">
             <div class="table-container">
-            <table class="table">
-              <tr class="success"><br>
-                <td>Title</td> <td>Description</td> <td>Start-Date</td>
-                <td>End Date</td><td>Is Billable</td><td>Is Active</td>
+            <table class="table table-hover">
+              <tr class="info"><br>
+                <th>Title</th> <th>Description</th> <th>Start-Date</th>
+                <th>End Date</th><th>Is Billable</th><th>Is Active</th>
                 <!-- <td>Created</td> -->
               </tr>
-              <tr class="info">
+              <tr class="" ng-repeat="project in projects">
                 <td>{{project.title}}</td> <td>{{project.description}}</td> <td>{{project.start_date}}</td>
                 <td>{{project.end_date}}</td> <td>{{project.is_billable}}</td> <td>{{project.is_active}}</td>
                 <!-- <td>{{project.created}}</td> -->
@@ -33,24 +25,22 @@
             </table>
           </div>
           <div class="row">
-            <div class="col-md-4 col-xs-12">
-              <div class="table-responsive">
-                <table class="table align="center"">
-                  <tr class="info">
-                    <td>Task Name</td> <td>Due Date</td> <td>Est Hours</td>
-                  </tr>
-                  <tr>
-                      <td>{{task.title}}</td> <td>{{task.dued_ate}}</td> <td>{{task.estimated_hours}}</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
+             <div class="col-md-12 col-xs-12">
+            <table class="table table-hover">
+              <tr class="info">
+                <td>Task Name</td> <td>Due Date</td> <td>Estimated Hours</td>
+              </tr>
+              <tr ng-repeat="task in tasks">
+                <td>{{project.task_set.title}}</td> <td>{{task.dued_ate}}</td> <td>{{task.estimated_hours}}</td>
+              </tr>
+            </table>
           </div>
         </div>
+        </div>
       </div>
-
-          <div class="btn-logout">
-            <a class="btn btn-danger btn-block logout" href="#/">Logout</a>
+          <div class="btn-group">
+            <button type="button" class="btn btn-default">Add</button>
+            <button type="button" class="btn btn-default">Edit</button>
+            <button type="button" class="btn btn-default" ng-click="deleteProject()">Delete</button>
           </div>
       </div>
-<!-- </div> -->
