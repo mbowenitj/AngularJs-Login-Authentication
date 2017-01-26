@@ -21,7 +21,6 @@ table{
   width:100%;
   margin-top: 48px;
   text-align: left;
-  font-weight: bold;
 }
 .container{
   width: 100%;
@@ -44,6 +43,15 @@ table{
       font-family: serif;
     }
   }
+}
+
+.select-option{
+  padding-top: 45px;
+
+  .select-project {
+    background-color: #C0C0C0;
+  }
+
 }
 
   .btn-logout{

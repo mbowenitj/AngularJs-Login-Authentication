@@ -1,10 +1,11 @@
 
 <!-- {{projects}} -->
 <!-- {{tasks}} -->
+<div class="container">
       <div ng-name="projects">
-        <div class="data"><br>
-          <h4>Select project to change</h4>
-          <select ng-model="selectedProjects">
+        <div class="select-option"><br>
+          <select ng-model="selectedProjects" class="select-project">
+            <option value="">--Select project to change--</option>
               <option ng-repeat="project in projects">{{project.title}}</option>
               <!-- ng-options="x.model for x in cars -->
           </select>
@@ -47,3 +48,4 @@
             <button type="button" class="btn btn-default" ng-click="deleteProject()">Delete</button>
           </div>
       </div>
+  </div>
