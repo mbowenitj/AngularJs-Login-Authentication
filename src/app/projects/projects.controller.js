@@ -33,26 +33,6 @@ angular.module('tangentLoginProject')
             // or server returns response with an error status.
           });
 
-           $http({
-                 method:'GET',
-                   url: 'http://projectservice.staging.tangentmicroservices.com/api/v1/Task',
-                     headers: {
-                       'Authorization': 'Token b7ec34e136bb6d28a4421e422e852b99cc834d17'
-                     }
-             }).then(function successCallback(response) {
-                 // this callback will be called asynchronously
-                 // when the response is available
-                   console.log("success, ",response);
-                   $scope.tasks = response.data;
-                   // $scope.task = response.data;
-
-               }, function errorCallback(response) {
-
-                 console.log("failure, ",response);
-
-             });
-
-
           $scope.deleteProject = function() {
             $http.delete({
                 url: 'http://projectservice.staging.tangentmicroservices.com/api/v1/projects/id/',

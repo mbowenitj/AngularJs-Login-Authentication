@@ -24,10 +24,28 @@ angular.module('tangentLoginProject')
 
             /* Use this for real authentication
              ----------------------------------------------*/
-            $http.post('http://userservice.staging.tangentmicroservices.com/api-explorer/#!/api/User', { username: username, password: password })
-               .success(function (response) {
-                   callback(response);
-               });
+            $http.post('http://userservice.staging.tangentmicroservices.com/api-explorer/#!/api/User',
+            headers: {
+                     'Authorization': 'Token b7ec34e136bb6d28a4421e422e852b99cc834d17',
+                     'Content-type': 'application/json'
+                    }
+            {
+              username: username,
+              password: password
+            })
+              //  .success(function (response) {
+              //      callback(response);
+              //  });
+              .then(function successCallback(response) {
+                  // this callback will be called asynchronously when the response is available
+                    console.log("success, ",response);
+                    $scope.projects = response.data;
+
+                }, function errorCallback(response) {
+
+                  console.log("failure, ",response);
+                  // called asynchronously if an error occurs or server returns response with an error status.
+                });
 
         };
 
@@ -139,3 +157,20 @@ angular.module('tangentLoginProject')
 
     /* jshint ignore:end */
 });
+// angular.module('tangentLoginProject')
+//   .factory('LoginService', function() {
+//     var admin = 'admin';
+//     var pass = 'pass';
+//     var isAuthenticated = false;
+//
+//     return {
+//       login : function(username, password) {
+//         isAuthenticated = username === admin && password === pass;
+//         return isAuthenticated;
+//       },
+//       isAuthenticated : function() {
+//         return isAuthenticated;
+//       }
+//     };
+//
+//   });

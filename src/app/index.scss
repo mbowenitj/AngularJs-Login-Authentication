@@ -22,6 +22,9 @@ table{
   margin-top: 48px;
   text-align: left;
 }
+h1{
+  text-align: center;
+}
 .container{
   width: 100%;
   padding-top: 35px;
@@ -46,7 +49,7 @@ table{
 }
 
 .select-option{
-  padding-top: 45px;
+  padding-top: 2px;
 
   .select-project {
     background-color: #C0C0C0;

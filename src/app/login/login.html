@@ -1,5 +1,5 @@
 
-<form name="login.form" ng-submit="login()" role="form">
+<form name="login.form" ng-submit="login.form()" role="form">
   <div class="container">
     <div class="form-group">
         <label for="username">Username</label>
@@ -12,7 +12,7 @@
     </div>
     <div class="form-actions">
         <button type="submit" class="btn btn-success btn-block">Login</button><br>
-        <button type="submit" class="btn btn-danger btn-block" ng-click="clearFields()">Clear</button>
+        <button type="cancel" class="btn btn-danger btn-block" ng-click="clearFields()">Clear</button>
     </div>
   </div>
 </form>
