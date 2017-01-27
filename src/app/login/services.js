@@ -11,21 +11,21 @@ angular.module('tangentLoginProject')
 
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
-            $timeout(function(){
-                var response = { success: username === 'test' && password === 'test' };
-                if(!response.success) {
-                    response.message = 'Username or password is incorrect';
-                }
-                callback(response);
-            }, 1000);
+            // $timeout(function(){
+            //     var response = { success: username === 'test' && password === 'test' };
+            //     if(!response.success) {
+            //         response.message = 'Username or password is incorrect';
+            //     }
+            //     callback(response);
+            // }, 1000);
 
 
             /* Used for real authentication
              ----------------------------------------------*/
-            //$http.post('http://userservice.staging.tangentmicroservices.com/api-explorer/', { username: username, password: password })
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
+            $http.post('http://userservice.staging.tangentmicroservices.com/api-explorer/', { username: username, password: password })
+               .success(function (response) {
+                   callback(response);
+               });
 
         };
 
