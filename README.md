@@ -3,9 +3,12 @@
 Steps to follow to get started:
 ====================================
 
-1. run - npm install && bower install.
-2. gulp serve - to run the project.
-3. login using - username & password.
+1. close login branch
+2. run - npm install && bower install.
+3. gulp serve - to run the project.
+4. Login template in progress...
+5. Just click login button to bypass
 =======================================================================================
-4. If for some reason you cannot login, type http://localhost:portnumber/#/projects on
-your browser to view projects.
+<!-- 5. If for some reason you cannot login, type http://localhost:portnumber/#/projects on
+your browser to view projects. -->
+<!-- 5. Login template still in progress... -->
