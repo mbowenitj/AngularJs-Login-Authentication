@@ -4,8 +4,8 @@
     <div class="container">
       <div ng-name="projects">
         <div class="select-option"><br>
-          <select class="select-project" ng-model="selectedProjects"  ng-change="changeFilter()">
-              <option value="">---Select project to change---</option>
+          <select class="select-project" ng-model="selected"  ng-change="changeFilter()">
+              <option value="" ng-selected="selected">---Select project to change---</option>
               <option ng-repeat="project in projects">{{project.title}}</option>
           </select>
         </div>
@@ -31,7 +31,7 @@
                   <tr class="info">
                     <td>Task Name</td> <td>Due Date</td> <td>Estimated Hours</td>
                   </tr>
-                  <tr ng-repeat="project in projects | filter: selectedProjects">
+                  <tr ng-repeat="project in projects | filter: selected" ng-if="selected">
                     <td>{{project.task_set[0].title}}</td> <td>{{project.task_set[0].due_date}}</td>
                     <td>{{project.task_set[0].estimated_hours}}</td>
                   </tr>
