@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tangentLoginProject')
-  .controller('LoginCtrl', function ($scope, $http,$rootScope, $location, $state,AuthenticationService) {
+  .controller('LoginCtrl', function ($scope, $http,$rootScope, $location,AuthenticationService) {
         // reset login status
         AuthenticationService.ClearCredentials();
 
@@ -17,11 +17,4 @@ angular.module('tangentLoginProject')
                 }
             });
         }
-
-       $scope.clearFields = function() {
-         $scope.username = '';
-         $scope.last_name = '';
-
-       };
-
 });
