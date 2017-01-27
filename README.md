@@ -3,7 +3,7 @@
 Steps to follow to get started:
 ====================================
 
-1. close login branch
+1. git clone login branch
 2. run - npm install && bower install.
 3. gulp serve - to run the project.
 4. Login template in progress...
