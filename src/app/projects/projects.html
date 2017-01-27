@@ -9,36 +9,35 @@
               <option ng-repeat="project in projects" ng-selected="selected">{{project.title}}</option>
           </select>
         </div>
-        <div class="row">
-          <div class="col-md-12 col-xs-12">
-            <!-- <div class="table-container"> -->
-              <table class="table table-hover">
-                <tr class="bg-primary"><br>
-                  <th>#</th>
-                  <th>Title</th> <th>Description</th> <th>Start-Date</th>
-                  <th>End Date</th><th>Is Billable</th><th>Is Active</th>
-                </tr>
-                <tr class="" ng-repeat="project in projects">
-                  <td>{{ $index + 1 }}</td>
-                  <td>{{project.title}}</td> <td>{{project.description}}</td> <td>{{project.start_date}}</td>
-                  <td>{{project.end_date}}</td> <td>{{project.is_billable}}</td> <td>{{project.is_active}}</td>
-                </tr>
-              </table>
-          <!-- </div> -->
-            <div class="row">
-               <div class="col-md-12 col-xs-12">
-                  <table class="table table-hover">
-                    <tr class="bg-primary">
-                      <td>Task Name</td> <td>Due Date</td> <td>Estimated Hours</td>
-                    </tr>
-                    <tr ng-repeat="project in projects | filter: selected" ng-if="selected">
-                      <td>{{project.task_set[0].title}}</td> <td>{{project.task_set[0].due_date}}</td>
-                      <td>{{project.task_set[0].estimated_hours}}</td>
-                    </tr>
-                  </table>
-                </div>
-            </div>
-         </div>
+        <div class="table-container">
+          <table class="table table-hover">
+            <tr class="bg-primary"><br>
+              <th>#</th>
+              <th>Title</th> <th>Description</th> <th>Start-Date</th>
+              <th>End Date</th><th>Is Billable</th><th>Is Active</th>
+            </tr>
+            <tr class="" ng-repeat="project in projects">
+              <td>{{ $index + 1 }}</td>
+              <td>{{project.title}}</td>
+              <td>{{project.description}}</td>
+              <td>{{project.start_date}}</td>
+              <td>{{project.end_date}}</td>
+              <td>{{project.is_billable}}</td>
+              <td>{{project.is_active}}</td>
+            </tr>
+          </table>
+            <table class="table table-hover">
+              <tr class="bg-primary">
+                <td>Task Name</td>
+                <td>Due Date</td>
+                <td>Estimated Hours</td>
+              </tr>
+              <tr ng-repeat="project in projects | filter: selected" ng-if="selected">
+                <td>{{project.task_set[0].title}}</td>
+                <td>{{project.task_set[0].due_date}}</td>
+                <td>{{project.task_set[0].estimated_hours}}</td>
+              </tr>
+            </table>
         </div>
           <div class="btn-group">
             <button type="button" class="btn btn-default">Add</button>
