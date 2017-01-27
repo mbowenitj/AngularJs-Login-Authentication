@@ -11,7 +11,7 @@
         </div>
         <div class="row">
           <div class="col-md-12 col-xs-12">
-            <div class="table-container">
+            <!-- <div class="table-container"> -->
               <table class="table table-hover">
                 <tr class="info"><br>
                   <th>#</th>
@@ -24,26 +24,26 @@
                   <td>{{project.end_date}}</td> <td>{{project.is_billable}}</td> <td>{{project.is_active}}</td>
                 </tr>
               </table>
-          </div>
-          <div class="row">
-             <div class="col-md-12 col-xs-12">
-                <table class="table table-hover">
-                  <tr class="info">
-                    <td>Task Name</td> <td>Due Date</td> <td>Estimated Hours</td>
-                  </tr>
-                  <tr ng-repeat="project in projects | filter: selected" ng-if="selected">
-                    <td>{{project.task_set[0].title}}</td> <td>{{project.task_set[0].due_date}}</td>
-                    <td>{{project.task_set[0].estimated_hours}}</td>
-                  </tr>
-                </table>
-              </div>
-          </div>
+          <!-- </div> -->
+            <div class="row">
+               <div class="col-md-12 col-xs-12">
+                  <table class="table table-hover">
+                    <tr class="info">
+                      <td>Task Name</td> <td>Due Date</td> <td>Estimated Hours</td>
+                    </tr>
+                    <tr ng-repeat="project in projects | filter: selected" ng-if="selected">
+                      <td>{{project.task_set[0].title}}</td> <td>{{project.task_set[0].due_date}}</td>
+                      <td>{{project.task_set[0].estimated_hours}}</td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
          </div>
         </div>
           <div class="btn-group">
-            <button type="button" class="btn btn-default">Add</button>
-            <button type="button" class="btn btn-default">Edit</button>
-            <button type="button" class="btn btn-default" ng-click="deleteProject()">Delete</button>
+              <button type="button" class="btn btn-default">Add</button>
+              <button type="button" class="btn btn-default">Edit</button>
+              <button type="button" class="btn btn-default" ng-click="deleteProject()">Delete</button>
           </div><br><br>
           <a href="/" role="button" class="btn btn-danger btn-block">Logout</a>
       </div>
