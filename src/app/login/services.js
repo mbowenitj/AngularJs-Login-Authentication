@@ -3,33 +3,43 @@
 angular.module('tangentLoginProject')
 
 .factory('AuthenticationService',
-    ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout',
-    function (Base64, $http, $cookieStore, $rootScope, $timeout) {
+    ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout','$localStorage','$state',
+    function (Base64, $http, $cookieStore, $rootScope, $timeout,$localStorage,$state,$scope) {
         var service = {};
 
         service.Login = function (username, password, callback) {
 
-            /* Dummy authentication for testing, uses $timeout to simulate api call
-             ----------------------------------------------*/
-            // $timeout(function(){
-            //     var response = { success: username === 'test' && password === 'test' };
-            //     if(!response.success) {
-            //         response.message = 'Username or password is incorrect';
-            //     }
-            //     callback(response);
-            // }, 1000);
-
-
             /* Used for real authentication
              ----------------------------------------------*/
-            $http.post('http://userservice.staging.tangentmicroservices.com:80/api-token-auth/',
-            { username: username,
-              password: password
-            })
-               .success(function (response) {
-                   callback(response);
-               });
+             console.log(username +password);
+            $http({
+              method: 'POST',
+                url: 'http://userservice.staging.tangentmicroservices.com:80/api-token-auth/',
+                headers: {
+                          'Content-type': 'application/json'
+                          //'username': username,
+                          //'password': password
 
+                        },
+                        data:{
+                        username:username,
+                        password:password
+                      }
+
+            })
+            .then(function successCallback(response) {
+                // this callback will be called asynchronously when the response is available
+                  console.log("success, ",response);
+                    //$scope.results = response.data;
+                    $localStorage.setObject("token",response.data.token);
+                    callback(response);
+                    $state.go('projects');
+
+              }, function errorCallback(response) {
+                callback(response);
+                console.log("failure, ",response);
+                // called asynchronously if an error occurs or server returns response with an error status.
+              });
         };
 
         service.SetCredentials = function (username, password) {
@@ -53,6 +63,23 @@ angular.module('tangentLoginProject')
         };
 
         return service;
+    }])
+
+    .factory('$localStorage', ['$window', function($window) {
+      return {
+        set: function(key, value) {
+          $window.localStorage[key] = value;
+        },
+        get: function(key, defaultValue) {
+          return $window.localStorage[key] || defaultValue;
+        },
+        setObject: function(key, value) {
+          $window.localStorage[key] = JSON.stringify(value);
+        },
+        getObject: function(key) {
+          return JSON.parse($window.localStorage[key] || '{}');
+        }
+      }
     }])
 
 .factory('Base64', function () {
