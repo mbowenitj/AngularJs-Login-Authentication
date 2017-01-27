@@ -2,7 +2,7 @@
 <!-- {{projects}} -->
   <h1>Projects List</h1>
     <div class="container">
-      <div ng-name="projects">
+      <div class="projects">
         <div class="select-option"><br>
           <select class="select-project" ng-model="selected"  ng-change="changeFilter()">
               <option value="" >---Select project to change---</option>
@@ -13,7 +13,7 @@
           <div class="col-md-12 col-xs-12">
             <!-- <div class="table-container"> -->
               <table class="table table-hover">
-                <tr class="info"><br>
+                <tr class="bg-primary"><br>
                   <th>#</th>
                   <th>Title</th> <th>Description</th> <th>Start-Date</th>
                   <th>End Date</th><th>Is Billable</th><th>Is Active</th>
@@ -28,7 +28,7 @@
             <div class="row">
                <div class="col-md-12 col-xs-12">
                   <table class="table table-hover">
-                    <tr class="info">
+                    <tr class="bg-primary">
                       <td>Task Name</td> <td>Due Date</td> <td>Estimated Hours</td>
                     </tr>
                     <tr ng-repeat="project in projects | filter: selected" ng-if="selected">
@@ -45,6 +45,6 @@
             <button type="button" class="btn btn-default">Edit</button>
             <button type="button" class="btn btn-default" ng-click="deleteProject()">Delete</button>
           </div><br><br>
-          <a href="/" role="button" class="btn btn-danger btn-block">Logout</a>
+          <a href="/" role="button" class="btn btn-block btn-logout">Logout</a>
       </div>
   </div>

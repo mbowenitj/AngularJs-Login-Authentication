@@ -18,10 +18,10 @@ body{
 }
 table{
     margin: 0 auto;
-    width:auto;
+    width:100%;
     margin-top: 48px;
     text-align: left;
-    // background-color:$back-color;
+    background-color:white;
 }
 .info{
     font-weight: bold;
@@ -78,22 +78,14 @@ h4{
     background-color: $back-color;
     height: 35px;
     font-weight: bold;
-
   }
-
 }
-  .btn-logout{
-    padding-top: 30px;
-    width:84%;
-    margin: 0 auto;
-    .logout{
+.btn-logout{
       background-color: red;
       color: white;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
-    }
   }
-
 @media screen and (min-width: 768px) {
   .container{
     padding-top: 35px;
@@ -115,6 +107,9 @@ h4{
 
 }
 @media screen and (min-width: 360px) {
+  table{
+    margin-left: 0 auto;
+  }
   .loginError{
     font-size: 18px;
   }
