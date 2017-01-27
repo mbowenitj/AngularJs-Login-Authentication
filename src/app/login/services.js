@@ -22,7 +22,7 @@ angular.module('tangentLoginProject')
 
             /* Used for real authentication
              ----------------------------------------------*/
-            $http.post('http://userservice.staging.tangentmicroservices.com/api-explorer/', { username: username, password: password })
+            $http.post('http://userservice.staging.tangentmicroservices.com:80/api-token-auth/', { username: username, password: password })
                .success(function (response) {
                    callback(response);
                });
