@@ -5,8 +5,8 @@
       <div ng-name="projects">
         <div class="select-option"><br>
           <select class="select-project" ng-model="selected"  ng-change="changeFilter()">
-              <option value="" ng-selected="selected">---Select project to change---</option>
-              <option ng-repeat="project in projects">{{project.title}}</option>
+              <option value="" >---Select project to change---</option>
+              <option ng-repeat="project in projects" ng-selected="selected">{{project.title}}</option>
           </select>
         </div>
         <div class="row">
