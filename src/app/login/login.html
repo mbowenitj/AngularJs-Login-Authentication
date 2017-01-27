@@ -1,23 +1,28 @@
 
 
-<div class="loginError" ng-if="loginError">
-  <p> Wrong Credentials, please try again!</p>
-</div>
+
 
 <form ng-submit="login()" role="form">
+  <div class="loginError" ng-if="loginError">
+    <p> Wrong Credentials, please try again!</p>
+  </div>
+  <div class="form-login">
     <div class="container">
-      <div class="form-group">
-          <label for="username">Username</label>
-
-          <input type="text" name="username" id="username" placeholder="Enter username" class="form-control" ng-model="username"  />
+      <h4>Please sign in</h4>
+      <div class="login-form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" placeholder="Enter username" class="form-control" ng-model="username"  />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <i class="fa fa-key"></i>
+            <input type="text" name="password" id="password" placeholder="Enter password" class="form-control" ng-model="password"  />
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block">Login</button><br>
+        </div>
       </div>
-      <div class="form-group">
-          <label for="password">Password</label>
-          <i class="fa fa-key"></i>
-          <input type="text" name="password" id="password" placeholder="Enter password" class="form-control" ng-model="password"  />
-      </div>
-      <div class="form-actions">
-          <button type="submit" class="btn btn-success btn-block">Login</button><br>
-      </div>
-    </div>
+  </div>
+  </div>
 </form>

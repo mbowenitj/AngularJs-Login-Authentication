@@ -14,41 +14,53 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
 $back-color:#D3D3D3;
 
 body{
-  // background-color: $back-color;
+  background-color: $back-color;
 }
 table{
     margin: 0 auto;
     width:auto;
     margin-top: 48px;
     text-align: left;
+    // background-color:$back-color;
 }
 .info{
     font-weight: bold;
   }
-
+.form-login{
+   background-color: $back-color;
+}
 h1{
     text-align: center;
 }
 
+h4{
+  text-align: center;
+  padding-top: 5px;
+  color: blue;
+  border: 2px solid #640c64;
+  border-radius: 5px;
+  line-height: 50px;
+}
 .loginError{
     color:red;
     font-size: 25px;
     font-weight: bold;
     text-align: center;
     padding-top: 20px;
-
   }
 .container{
   width: 70%;
   padding-top: 35px;
    .form-group{
     color: black;
-    font-size: 18px;
     input[type=text] {
       height: 45px;
     }
     input[type=password] {
       height: 45px;
+    }
+    .login-form{
+      background-color: $back-color;
     }
   }
   .form-actions{
@@ -70,7 +82,6 @@ h1{
   }
 
 }
-
   .btn-logout{
     padding-top: 30px;
     width:84%;
@@ -86,9 +97,13 @@ h1{
 @media screen and (min-width: 768px) {
   .container{
     padding-top: 35px;
+    .login-form{
+      padding-top: 65px;
+    }
      .form-group{
       color: black;
       font-size: 22px;
+
       input[type=text] {
         height: 55px;
       }
@@ -99,21 +114,44 @@ h1{
   }
 
 }
-@media screen and (min-width: 412px) {
-  // .container{
-  //   padding-top: 35px;
-  //    .form-group{
-  //     color: black;
-  //     font-size: 22px;
-  //     input[type=text] {
-  //       height: 55px;
-  //     }
-  //     input[type=password] {
-  //       height: 55px;
-  //     }
-  //   }
+@media screen and (min-width: 360px) {
+  .loginError{
+    font-size: 18px;
+  }
+  .container{
+    .login-form{
+    padding-top:55px;
+   }
+  }
+}
+@media screen and (min-width: 320px) {
+  .container{
+    .form-group{
+      font-size: 14px;
+    }
   }
 
+  .loginError{
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 412px) {
+  .loginError{
+    font-size: 18px;
+  }
+  .container{
+    .login-form{
+    padding-top:55px;
+   }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container{
+    .form-group{
+      font-size: 25px;
+    }
+  }
+}
 
 
 //

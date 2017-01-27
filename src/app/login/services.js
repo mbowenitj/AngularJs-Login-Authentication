@@ -11,21 +11,17 @@ angular.module('tangentLoginProject')
 
             /* Used for real authentication
              ----------------------------------------------*/
-             console.log(username +password);
+             console.log(username + password);
             $http({
               method: 'POST',
                 url: 'http://userservice.staging.tangentmicroservices.com:80/api-token-auth/',
                 headers: {
                           'Content-type': 'application/json'
-                          //'username': username,
-                          //'password': password
-
                         },
                         data:{
-                        username:username,
-                        password:password
-                      }
-
+                              username:username,
+                              password:password
+                        }
             })
             .then(function successCallback(response) {
                 // this callback will be called asynchronously when the response is available
