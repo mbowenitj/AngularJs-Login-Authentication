@@ -22,14 +22,16 @@ angular.module('tangentLoginProject')
 
             /* Used for real authentication
              ----------------------------------------------*/
-            $http.post('http://userservice.staging.tangentmicroservices.com/api-explorer/',
-            { username: username,
-              password: password
-            })
-            // headers: {
-            //           'Authorization': 'Token b7ec34e136bb6d28a4421e422e852b99cc834d17',
-            //           'Content-type': 'application/json'
-            //          }
+            $http.post('http://userservice.staging.tangentmicroservices.com:80/api-token-auth/',
+              { username: username,
+                password: password,
+              },
+              headers: {
+                        'Authorization': 'Token b7ec34e136bb6d28a4421e422e852b99cc834d17',
+                        'Content-type': 'application/json'
+                       }
+             )
+
                .success(function (response) {
                    callback(response);
                });

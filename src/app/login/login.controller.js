@@ -7,9 +7,9 @@ angular.module('tangentLoginProject')
 
         $scope.login = function () {
             $scope.dataLoading = true;
-            AuthenticationService.Login($scope.username, $scope.last_name, function (response) {
+            AuthenticationService.Login($scope.username, $scope.password, function (response) {
                 if(response.success){
-                    AuthenticationService.SetCredentials($scope.username, $scope.last_name);
+                    AuthenticationService.SetCredentials($scope.username, $scope.password);
                     $location.path('projects');
                 } else {
                     $scope.error = response.message;
